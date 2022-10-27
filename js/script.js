@@ -67,6 +67,18 @@ const {createApp} = Vue
                 if(this.activeIndex > this.slides.image.length -1){
                    this.activeIndex = 0;
                 }
+            },
+            autoScroll(){
+                this.autoscroll = setInterval(()=>{
+                    this.nextMovie();
+                },2000)
+            },
+            stopAutoScroll(){
+                clearInterval(this.autoscroll);
+                this.autoscroll = null;
             }
+        },
+        mounted(){
+            this.autoScroll();
         }
 }).mount('#app')
