@@ -25,14 +25,14 @@
 // console.log(slides);
 const {createApp} = Vue
 
-    createApp({
+    const app = createApp({
         data(){
             return{
                 activeIndex: 0,
                 autoscroll: null,
                 slides:[
                     {
-                    image: 'img/01.webp',
+                        image: 'img/01.webp',
                         title: 'Marvel\'s Spiderman Miles Morale',
                         text: 'Experience the rise of Miles Morales as the new hero masters incredible, explosive new powers to become his own Spider-Man.',
                     }, {
@@ -59,12 +59,12 @@ const {createApp} = Vue
             prevMovie(){
                 this.activeIndex--
                 if(this.activeIndex < 0){
-                    this.activeIndex = this.slides.image.length -1;
+                    this.activeIndex = this.slides.length -1;
                 }
             },
             nextMovie(){
                 this.activeIndex++
-                if(this.activeIndex > this.slides.image.length -1){
+                if(this.activeIndex > this.slides.length -1){
                    this.activeIndex = 0;
                 }
             },
